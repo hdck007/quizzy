@@ -14,7 +14,7 @@ export default function OptionComponent({
 	return (
 		<div className='form-control'>
 			<div
-				className={`label cursor-pointer w-4/5 lg:w-96 mx-auto 
+				className={`label cursor-pointer w-4/5 lg:w-[420px] mx-auto 
 										h-20 bg-neutral rounded-xl
 										flex justify-start px-6 items-center my-2
 										${option.selected ? 'border-2 border-success' : ''}`}
