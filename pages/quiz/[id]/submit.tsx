@@ -5,7 +5,6 @@ import { QuizContext } from '../../../contexts/quizcontext';
 import { quizzes } from '../../../src/utils/constants';
 import { GetServerSideProps } from 'next/types';
 import { Score } from '../../../types/scores';
-import { IOption } from '../../../types/option';
 
 export default function Home({ id }: { id: number }) {
 	const router = useRouter();
