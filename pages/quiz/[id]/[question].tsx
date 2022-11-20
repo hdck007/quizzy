@@ -99,7 +99,7 @@ export default function Question({
 	return (
 		<div className='w-full mx-auto bg-purple-500 min-h-screen overflow-hidden'>
 			<div className='w-full md:w-4/5 mx-auto h-screen flex items-end'>
-				<div className='h-[90%] bg-white rounded-t-3xl bottom-0 relative prose lg:prose-xl min-w-full overflow-x-clip '>
+				<div className='h-[90%] bg-white rounded-t-3xl bottom-0 relative prose lg:prose-xl min-w-full '>
 					<div className='absolute top-[-60px] left-0 w-full flex justify-center items-center'>
 						<div
 							className='mx-auto bg-white rounded-full p-1  '

@@ -6,6 +6,7 @@ import { quizzes } from '../../../src/utils/constants';
 import { GetServerSideProps } from 'next/types';
 import { Score } from '../../../types/scores';
 
+
 export default function Home({ id }: { id: number }) {
 	const router = useRouter();
 	const [score, setScore] = useState(0);
