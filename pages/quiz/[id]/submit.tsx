@@ -80,6 +80,7 @@ export default function Home({ id }: { id: number }) {
 								background: 'white',
 								padding: '4px',
 								borderRadius: '100%',
+								marginTop: '100px',
 							}}
 						>
 							<RadialProgress
