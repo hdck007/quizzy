@@ -70,7 +70,7 @@ export default function Home({ id }: { id: number }) {
 	return (
 		<div className='w-full mx-auto bg-purple-500 min-h-screen overflow-hidden'>
 			<div className='w-full md:w-4/5 mx-auto h-screen flex items-end'>
-				<div className='h-[90%] bg-white rounded-t-3xl bottom-0 relative prose lg:prose-xl min-w-full flex flex-col items-center justify-between '>
+				<div className='h-[90%] bg-white rounded-t-3xl bottom-0 relative prose lg:prose-xl min-w-full flex flex-col items-center justify-between  pb-5 '>
 					<div className='left-0 w-full flex justify-center items-center'>
 						<div
 							className='mx-auto'
