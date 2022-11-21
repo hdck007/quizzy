@@ -1,11 +1,10 @@
 import { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import RadialProgress from '../../../src/components/radialprogress';
-import { QuizContext } from '../../../contexts/quizcontext';
+import { useQuizContext } from '../../../contexts/quizcontext';
 import { quizzes } from '../../../src/utils/constants';
 import { GetServerSideProps } from 'next/types';
 import { Score } from '../../../types/scores';
-
 
 export default function Home({ id }: { id: number }) {
 	const router = useRouter();
@@ -15,7 +14,7 @@ export default function Home({ id }: { id: number }) {
 		incorrect: 0,
 	});
 
-	const { scores, setScores }: any = useContext(QuizContext);
+	const { scores, setScores } = useQuizContext();
 
 	const handleStartAgain = () => {
 		router.push('/');
@@ -43,9 +42,7 @@ export default function Home({ id }: { id: number }) {
 			correct: 0,
 			incorrect: 0,
 		};
-		const newScoreValue = scoreValue.map((scoreObj: {
-			score: number;
-		}) => {
+		const newScoreValue = scoreValue.map((scoreObj: { score: number }) => {
 			if (scoreObj.score > 0) {
 				statusObject.correct++;
 				return {

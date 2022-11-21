@@ -5,8 +5,8 @@ import RadialProgress from '../../../src/components/radialprogress';
 import { quizzes } from '../../../src/utils/constants';
 import Image from 'next/image';
 import OptionComponent from '../../../src/components/optioncomponent';
-import { QuizContext } from '../../../contexts/quizcontext';
 import { IOption } from '../../../types/option';
+import { useQuizContext } from '../../../contexts/quizcontext';
 
 interface IQuestion {
 	question: string;
@@ -31,7 +31,7 @@ export default function Question({
 	const router = useRouter();
 	const [isDisabled, setIsDisabled] = useState(true);
 	const [options, setOptions] = useState<IOption[]>([]);
-	const { scores, setScores }: any = useContext(QuizContext);
+	const { scores, setScores } = useQuizContext();
 
 	useEffect(() => {
 		setOptions(optionsArr);
@@ -68,9 +68,14 @@ export default function Question({
 		if (scores.length < Number(questionNumber)) {
 			const newScores = [...scores];
 			newScores[+questionNumber] = selectionArr;
-			setScores(selectionArr);
+			setScores(newScores);
 		} else {
-			const newScores = [...scores, 0];
+			const newScores = [
+				...scores,
+				{
+					...selectionArr,
+				},
+			];
 			newScores[+questionNumber] = selectionArr;
 			setScores(newScores);
 		}
@@ -87,9 +92,14 @@ export default function Question({
 		if (scores.length < Number(questionNumber)) {
 			const newScores = [...scores];
 			newScores[+questionNumber] = selectionArr;
-			setScores(selectionArr);
+			setScores(newScores);
 		} else {
-			const newScores = [...scores, 0];
+			const newScores = [
+				...scores,
+				{
+					...selectionArr,
+				},
+			];
 			newScores[+questionNumber] = selectionArr;
 			setScores(newScores);
 		}
